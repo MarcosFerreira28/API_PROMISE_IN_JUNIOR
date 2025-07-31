@@ -80,8 +80,19 @@ main section {
 }
 
 /* -------------------------- cartas interior --------------------------------- */
+.camisas{
+    height: 843px;
+    width: 1310px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .carta {
     background: #243B98;
+    width: 408px;
+    height: 819px;
+    box-shadow: 12px 12px 12px 0px #00000040;
 }
 
 .carta .fundo {
