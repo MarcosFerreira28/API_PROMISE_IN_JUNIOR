@@ -83,6 +83,8 @@ main section {
     width: 408px;
     height: 588px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-image: url('./assets/pessoa.png');
     background-size: cover;
     background-position: center; 
@@ -95,6 +97,7 @@ main section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 16px;
 }
 
 .imagenscarta .deletar {
@@ -124,6 +127,7 @@ main section {
     width: 119px;
     height: 48px;
     gap: 11px;
+    padding: 16px;
 }
 
 .nota p {
