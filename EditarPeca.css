@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #415FCE;
+    height: 139px;
+    padding: 0 60px;
+}
+
+.camisaIN {
+    width: 110px;
+    height: 99px;
+}
+
+header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 64px;
+}
+
+header div {
+    width: 315px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    gap: 21px;
+    background: #1F9B5F;
+}
+
+header div img {
+    width: 40px;
+    height: 40px;
+}
+
+header div p {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.2px;
+    color: #FFFFFF;
+}
+/* ----------------------------------------MAIN--------------------------------------------- */
+
+/* -----------------------------------FOOTER--------------------------------- */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 210px;
+    background: #FCF7F8;
+    gap: 20px;
+}
+
+
+.infos {
+    display: flex;
+    align-items: center;
+    width: 1301px;
+    height: 128px;
+    justify-content: space-between;
+}
+
+.endereco {
+    width: 302px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;   
+}
+
+footer h3 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 4%;
+    color: #4E8098;
+}
+
+footer p {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 5%;
+    color: #274553;
+}
+
+.faleconosco {
+    width: 302px;
+    height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.imagensfooter {
+    width: 106px;
+    height: 30px;
+}
+
+.rodape {
+    width: 100%;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #415FCE;
+}
+
+.rodape p {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 5%;
+    color: black;
+}
