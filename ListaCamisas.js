@@ -27,13 +27,18 @@ async function DeletarCamisa(id) {
 }
 
 function AtualizarInfos(produtos){
-    const camisas = document.querySelectorAll(".camisas");
+    const section = document.querySelector("section");
+    section.innerHTML = "";
     // camisas.forEach(linha => console.log(linha.innerHTML))
 
-    camisas.forEach(linha => {
-        linha.innerHTML = ""
-        produtos.forEach(produto => {
-            linha.innerHTML += `
+    for (let i = 0; i < produtos.length; i+=3){
+        let camisaslinha = document.createElement("div");
+        camisaslinha.className = "camisas";
+
+        for (let j = i; j < i + 3 && j < produtos.length; j++){
+            const produto = produtos[j];
+            console.log(produto.rating)
+            camisaslinha.innerHTML += `
                 <div class="carta">
                     <div class="fundo">
                         <div class="nota">
@@ -55,11 +60,16 @@ function AtualizarInfos(produtos){
                     </div>
                 </div>
             `
-        })
-    })
-
-    camisas.forEach(linha => console.log(linha.innerHTML))
-
+        }
+        console.log(camisaslinha.innerHTML)
+        section.appendChild(camisaslinha);
+    }
+    
+    section.innerHTML += `<div class="botoespaginacao">
+                <img src="./assets/setaEsquerda.png" alt="seta para direita" class="seta">
+                <button class="numeropag">1</button>
+                <img src="./assets/setaDireita.png" alt="seta para esquerda" class="seta">
+            </div>`
 
     document.querySelectorAll('.deletar').forEach(botao => {
         botao.addEventListener('click', function() {
@@ -71,7 +81,7 @@ function AtualizarInfos(produtos){
 
 function AtualizaPaginacao(total, pageAtual) {
     const botoes = document.querySelector('.botoespaginacao');
-    let limit = 8;
+    let limit = 9;
     const totalPaginas = Math.ceil(total / limit);
     botoes.innerHTML = '<img src="./assets/setaEsquerda.png" class="seta">';
 
@@ -89,18 +99,4 @@ function AtualizaPaginacao(total, pageAtual) {
     });
 }
 
-
-// DeletarCamisa(1);
-GetCamisas(8, 1);
-
-document.querySelectorAll('.deletar').forEach(botao => {
-    botao.addEventListener('click', function() {
-        const id = this.getAttribute('id');
-        DeletarCamisa(id);
-    });
-});
-
-//na hora de colcoar as informações nos cards colocar um id em cada botão
-
-
-
+GetCamisas(9, 1);
