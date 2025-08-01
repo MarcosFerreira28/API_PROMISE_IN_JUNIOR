@@ -21,6 +21,7 @@ async function DeletarCamisa(id) {
         let deleta = await fetch( url, {
             method: "DELETE",
         })
+        alert("Produto deletado com sucesso!")
     }catch{
         console.log(err => console.log(err))
     }
