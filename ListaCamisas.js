@@ -80,6 +80,13 @@ function AtualizarInfos(produtos){
             DeletarCamisa(id);
         });
     });
+
+    document.querySelectorAll('.editar').forEach(botao => {
+        botao.addEventListener('click', function() {
+            const id = this.getAttribute("id");
+            window.location.href="EditarPeca.html?id=" + id;
+        });
+    });
 }
 
 function AtualizaPaginacao(total, pageAtual) {
