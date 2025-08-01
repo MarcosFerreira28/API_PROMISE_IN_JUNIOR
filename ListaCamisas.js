@@ -37,7 +37,6 @@ function AtualizarInfos(produtos){
 
         for (let j = i; j < i + 3 && j < produtos.length; j++){
             const produto = produtos[j];
-            console.log(produto.rating)
             camisaslinha.innerHTML += `
                 <div class="carta">
                     <div class="fundo">
@@ -61,8 +60,12 @@ function AtualizarInfos(produtos){
                 </div>
             `
         }
-        console.log(camisaslinha.innerHTML)
         section.appendChild(camisaslinha);
+
+        camisaslinha.querySelectorAll(".fundo").forEach((fundo,j) => {
+            fundo.style.backgroundImage = `url(${produtos[i + j].image})` //isso coloca um fundo se tiver no json
+        })
+
     }
     
     section.innerHTML += `<div class="botoespaginacao">
