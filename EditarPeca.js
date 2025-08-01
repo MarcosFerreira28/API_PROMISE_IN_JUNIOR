@@ -44,12 +44,21 @@ async function EditaDados(id) {
     if (nome.value.trim() != ""){
         obj.name = nome.value;
     }
-    if (imagem.value.trim() != ""){ //adicionar if de url pra imagem
-        obj.image = imagem.value;
+
+    if (imagem.value.trim() != ""){
+        try {
+            new URL(imagem.value);
+            obj.image = imagem.value;
+        } catch (e) {
+            alert("O link da imagem não é uma URL válida.");
+            return;
+        }
     }
+
     if (descricao.value.trim() != ""){
         obj.description = descricao.value;
     }
+
     if (preco.value.trim() != ""){
         if (isNaN(Number(preco.value)) || preco.value < 0){
             alert("O preço deve ser um número positivo!");
@@ -57,9 +66,11 @@ async function EditaDados(id) {
         }
         obj.price = Number(preco.value).toFixed(2);
     }
+
     if (categoria.value.trim() != ""){
         obj.category = categoria.value;
     }
+
     if (avaliacao.value.trim() != ""){
         if(isNaN(Number(avaliacao.value)) || avaliacao.value < 0 || avaliacao.value > 5){
             alert("O número de avaliação deve ser positivo entre 0 e 5");

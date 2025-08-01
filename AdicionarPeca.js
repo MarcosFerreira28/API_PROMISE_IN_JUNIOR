@@ -19,7 +19,11 @@ async function InsereCamisa() {
         return
     }
 
-    if (imagem.value.trim() != ""){ //adicionar if de url pra imagem
+    try {
+        new URL(imagem.value);
+    } catch (e) {
+        alert("O link da imagem não é uma URL válida.");
+        return;
     }
     
     if (isNaN(Number(preco.value)) || preco.value < 0){
