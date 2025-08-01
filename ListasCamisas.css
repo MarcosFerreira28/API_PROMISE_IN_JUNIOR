@@ -240,18 +240,15 @@ main section {
     background: var(--grey-200, #BDB7B6);
     border-radius: 1000px;
     padding: 5px;
-}
-
-.numeropag:hover {
-    background: #1F9B5F;
-}
-
-.numeropag p {
     font-family: Inter;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: -0.2px;
     color: var(--Fundo-de-pagina, #F1EFFF);
+}
+
+.numeropag:hover {
+    background: #1F9B5F;
 }
 
 /* -----------------------------------FOOTER--------------------------------- */
