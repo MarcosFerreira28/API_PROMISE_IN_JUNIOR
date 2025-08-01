@@ -83,13 +83,36 @@ function AtualizaPaginacao(total, pageAtual) {
     const botoes = document.querySelector('.botoespaginacao');
     let limit = 9;
     const totalPaginas = Math.ceil(total / limit);
-    botoes.innerHTML = '<img src="./assets/setaEsquerda.png" class="seta">';
+    botoes.innerHTML = ""
 
+    if(pageAtual > 1){
+        botoes.innerHTML = '<button class="seta" id="setaesquerda"><img src="./assets/setaEsquerda.png" class="seta"></button>';
+    }
     for (let i = 1; i <= totalPaginas; i++) {
-        botoes.innerHTML += `<button class="numeropag" id="${i}">${i}</button>`;
+        if (i == pageAtual){
+            botoes.innerHTML += `<button class="numeropag_ativa" id="${i}">${i}</button>`;
+
+        }else{
+            botoes.innerHTML += `<button class="numeropag" id="${i}">${i}</button>`;
+        }
+    }
+    if (pageAtual < totalPaginas){
+        botoes.innerHTML += '<button class="seta" id="setadireita"><img src="./assets/setaDireita.png" class="seta"></button>';
     }
 
-    botoes.innerHTML += '<img src="./assets/setaDireita.png" class="seta">';
+    if (pageAtual > 1){
+        let setaesquerda = document.querySelector("#setaesquerda");
+        setaesquerda.addEventListener("click", function() {
+            GetCamisas(limit, pageAtual - 1);
+        })
+    }
+
+    if (pageAtual < totalPaginas){
+        let setaesquerda = document.querySelector("#setadireita");
+        setaesquerda.addEventListener("click", function() {
+            GetCamisas(limit, pageAtual + 1);
+        })
+    }
 
     document.querySelectorAll('.numeropag').forEach(botao => {
         botao.addEventListener('click', function() {
