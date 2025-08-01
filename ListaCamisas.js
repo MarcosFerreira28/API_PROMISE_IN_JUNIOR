@@ -30,7 +30,7 @@ async function DeletarCamisa(id) {
 
 
 // DeletarCamisa(1);
-// GetCamisas(8, 1);
+GetCamisas(100, 1);
 //FAZER PAGINAÇÃO COLOCANDO AS INFORMAÇÕES
 
 document.querySelectorAll('.deletar').forEach(botao => {
