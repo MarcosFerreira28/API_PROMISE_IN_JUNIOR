@@ -78,8 +78,8 @@ main #adicionarbutton{
 }
 
 main #adicionarbutton:hover {
-    background: red; 
-    /* MELHORAR */
+    background: #415FCE; 
+    transition: 0.5s ease-in-out;
 }
 
 main section {
@@ -233,6 +233,7 @@ main section {
 .seta {
     width: 40px;
     height: 40px;
+    background: white;
 }
 
 .numeropag {
@@ -269,6 +270,12 @@ main section {
 
 .numeropag:hover {
     background: #1F9B5F;
+}
+
+.seta:hover{
+    width: 60px;
+    height: 60px;
+    transition: 0.5s ease-in-out;
 }
 
 /* -----------------------------------FOOTER--------------------------------- */
