@@ -56,7 +56,7 @@ function AtualizarInfos(produtos){
                             <h2 class="tipo" id="categoria">${produto.category}</h2>
                         </div>
                         <p class="descricao" id="descricao">${produto.description}</p>
-                        <p class="preco" id="preco">R$ ${produto.price}</p>
+                        <p class="preco" id="preco">R$ ${Number(produto.price).toFixed(2)}</p>
                     </div>
                 </div>
             `
