@@ -179,7 +179,6 @@ main section {
 }
 
 .infocarta div {
-    width: 329px;
     height: 68px;
     padding: 16px 0 8px 16px;
 }
@@ -203,6 +202,8 @@ main section {
 }
 
 .infocarta .descricao {
+    display: flex;
+    align-items: center;
     width: 344px;
     height: 69px;
     font-family: Inter;
