@@ -44,7 +44,7 @@ async function EditaDados(id) {
     if (nome.value.trim() != ""){
         obj.name = nome.value;
     }
-    if (imagem.value.trim() != ""){
+    if (imagem.value.trim() != ""){ //adicionar if de url pra imagem
         obj.image = imagem.value;
     }
     if (descricao.value.trim() != ""){
@@ -55,7 +55,7 @@ async function EditaDados(id) {
             alert("O preço deve ser um número positivo!");
             return;
         }
-        obj.price = Number(preco.value);
+        obj.price = Number(preco.value).toFixed(2);
     }
     if (categoria.value.trim() != ""){
         obj.category = categoria.value;
@@ -65,33 +65,40 @@ async function EditaDados(id) {
             alert("O número de avaliação deve ser positivo entre 0 e 5");
             return;
         }
-        obj.rating = Number(avaliacao.value)
+        obj.rating = Number(avaliacao.value).toFixed(1);
     }
 
     let url = `http://localhost:3000/products/${id}`;
-    let resposta = await fetch(url, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(obj),
-        }
-    )
-    let json = await resposta.json();
-    console.log(resposta);
-    console.log(json);
 
+    try {
+        let resposta = await fetch(url, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(obj),
+            }
+        )
+        let json = await resposta.json();
+        console.log(resposta);
+        console.log(json);
+    }catch{
+        console.log(err => console.log(err))
+    }
+
+    window.location.href="ListaCamisas.html";
+    alert("Produto editado com sucesso!");
 }
 
-// const params = new URLSearchParams(window.location.search);
-// const idcamisa = parseInt(params.get("id"));
+const params = new URLSearchParams(window.location.search);
+const idcamisa = parseInt(params.get("id"));
 
-ColocaDados(4);
+ColocaDados(idcamisa);
 
 let botao = document.querySelector("#botao");
 botao.addEventListener("click", function(event) {
 
-    // event.preventDefault();
-    EditaDados(4)
+    event.preventDefault();
+    EditaDados(idcamisa)
 })
 
