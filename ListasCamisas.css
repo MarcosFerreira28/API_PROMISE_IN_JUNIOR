@@ -115,6 +115,7 @@ main section {
     flex-direction: row;
     justify-content: space-between;
     background-image: url('./assets/pessoa.png');
+    background-color: #1F9B5F;
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 
