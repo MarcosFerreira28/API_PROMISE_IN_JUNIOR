@@ -41,7 +41,7 @@ function AtualizarInfos(produtos){
                 <div class="carta">
                     <div class="fundo">
                         <div class="nota">
-                            <p id="nota">${produto.rating.toFixed(1)}</p>
+                            <p id="nota">${Number(produto.rating).toFixed(1)}</p>
                             <img src="./assets/Star 1.png" alt="estrela">
                         </div>
                         <div class="imagenscarta">
