@@ -30,7 +30,6 @@ async function DeletarCamisa(id) {
 function AtualizarInfos(produtos){
     const section = document.querySelector("section");
     section.innerHTML = "";
-    // camisas.forEach(linha => console.log(linha.innerHTML))
 
     for (let i = 0; i < produtos.length; i+=3){
         let camisaslinha = document.createElement("div");
@@ -42,13 +41,14 @@ function AtualizarInfos(produtos){
                 <div class="carta">
                     <div class="fundo">
                         <div class="nota">
-                            <p id="nota">${produto.rating}</p>
+                            <p id="nota">${produto.rating.toFixed(1)}</p>
                             <img src="./assets/Star 1.png" alt="estrela">
                         </div>
                         <div class="imagenscarta">
                             <button type="button" class="deletar" id="${produto.id}"><img src="./assets/deletar.png" alt="imagem do lixo"></button>
                             <button type="button" class="editar" id="${produto.id}"><img src="./assets/editar.png" alt="imagem do lápis"></button>
                         </div>
+                        <img class="imagemfundo" src="${produto.image}">
                     </div>
                     <div class="infocarta">
                         <div>
@@ -62,10 +62,6 @@ function AtualizarInfos(produtos){
             `
         }
         section.appendChild(camisaslinha);
-
-        camisaslinha.querySelectorAll(".fundo").forEach((fundo,j) => {
-            fundo.style.backgroundImage = `url(${produtos[i + j].image})` //isso coloca um fundo se tiver no json
-        })
 
     }
     
@@ -97,7 +93,7 @@ function AtualizaPaginacao(total, pageAtual) {
     botoes.innerHTML = ""
 
     if(pageAtual > 1){
-        botoes.innerHTML = '<button class="seta" id="setaesquerda"><img src="./assets/setaEsquerda.png" class="seta"></button>';
+        botoes.innerHTML += '<button class="seta" id="setaesquerda"><img src="./assets/setaEsquerda.png" class="seta"></button>';
     }
     for (let i = 1; i <= totalPaginas; i++) {
         if (i == pageAtual){
