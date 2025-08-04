@@ -17,6 +17,12 @@ header {
     height: 99px;
 }
 
+.camisaIN:hover{
+    width: 120px;
+    height: 109px;
+    transition: 0.5s ease-in-out;
+}
+
 header h1 {
     position: absolute;
     left: 50%;
@@ -193,17 +199,23 @@ main section {
 .carta .infocarta {
     width: 408px;
     height: 231px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
 }
 
 .infocarta div {
+    position: absolute;
+    top: 16px;
+    left: 16px;
     height: 68px;
-    padding: 16px 0 8px 16px;
 }
 
 .infocarta div h1 {
     font-family: Inter;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: 5%;
     text-transform: uppercase;
     color: #8CBF26;
@@ -221,21 +233,24 @@ main section {
 .infocarta .descricao {
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 92px;
+    left: 48px;
     width: 344px;
     height: 69px;
     font-family: Inter;
     font-weight: 500;
     font-size: 14px;
-    padding: 0 0 6px 48px;
     color: #FFFFFF;
 }
 
 .infocarta .preco {
+    height: 48px;
     font-family: Inter;
     font-weight: 700;
     font-size: 40px;
     color: #8CBF26;
-    padding-left: 215px;
+    padding: 0 16px 16px 0;
 }
 
 /*  -----------------------------botao pós cartões---------------------------------------- */
